@@ -1,0 +1,12 @@
+C:\Users\anton\OneDrive\Desktop\TicTacToe\bin\Debug\TicTacToe.exe.config
+C:\Users\anton\OneDrive\Desktop\TicTacToe\bin\Debug\TicTacToe.exe
+C:\Users\anton\OneDrive\Desktop\TicTacToe\bin\Debug\TicTacToe.pdb
+C:\Users\anton\OneDrive\Desktop\TicTacToe\bin\Debug\TicTacToe.xml
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.vbproj.AssemblyReference.cache
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.Form1.resources
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.Resources.resources
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.vbproj.GenerateResource.cache
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.vbproj.CoreCompileInputs.cache
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.exe
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.xml
+C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.pdb
