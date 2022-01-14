@@ -10,3 +10,15 @@ C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.vbproj.CoreCompile
 C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.xml
 C:\Users\anton\OneDrive\Desktop\TicTacToe\obj\Debug\TicTacToe.pdb
+E:\TicTacToe\obj\Debug\TicTacToe.vbproj.AssemblyReference.cache
+E:\TicTacToe\obj\Debug\TicTacToe.Form1.resources
+E:\TicTacToe\obj\Debug\TicTacToe.vbproj.GenerateResource.cache
+E:\TicTacToe\obj\Debug\TicTacToe.exe
+E:\TicTacToe\obj\Debug\TicTacToe.xml
+E:\TicTacToe\obj\Debug\TicTacToe.pdb
+E:\TicTacToe\bin\Debug\TicTacToe.exe.config
+E:\TicTacToe\bin\Debug\TicTacToe.exe
+E:\TicTacToe\bin\Debug\TicTacToe.pdb
+E:\TicTacToe\bin\Debug\TicTacToe.xml
+E:\TicTacToe\obj\Debug\TicTacToe.Resources.resources
+E:\TicTacToe\obj\Debug\TicTacToe.vbproj.CoreCompileInputs.cache

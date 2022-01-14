@@ -110,16 +110,7 @@
 
     ' Buttons on Play Panel
     Private Sub BtnTic1_Click(sender As Object, e As EventArgs) Handles BtnTic1.Click
-        currentPlayer = Player.Text
-        If BtnTic1.Text = "X" Or BtnTic1.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic1.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic1.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic1)
 
         If WinConditions() Then
             IncreaseScore()
@@ -127,16 +118,7 @@
     End Sub
 
     Private Sub BtnTic2_Click(sender As Object, e As EventArgs) Handles BtnTic2.Click
-        currentPlayer = Player.Text
-        If BtnTic2.Text = "X" Or BtnTic2.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic2.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic2.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic2)
 
         If WinConditions() Then
             IncreaseScore()
@@ -144,16 +126,7 @@
     End Sub
 
     Private Sub BtnTic3_Click(sender As Object, e As EventArgs) Handles BtnTic3.Click
-        currentPlayer = Player.Text
-        If BtnTic3.Text = "X" Or BtnTic3.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic3.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic3.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic3)
 
         If WinConditions() Then
             IncreaseScore()
@@ -161,16 +134,7 @@
     End Sub
 
     Private Sub BtnTic4_Click(sender As Object, e As EventArgs) Handles BtnTic4.Click
-        currentPlayer = Player.Text
-        If BtnTic4.Text = "X" Or BtnTic4.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic4.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic4.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic4)
 
         If WinConditions() Then
             IncreaseScore()
@@ -179,16 +143,7 @@
     End Sub
 
     Private Sub BtnTic5_Click(sender As Object, e As EventArgs) Handles BtnTic5.Click
-        currentPlayer = Player.Text
-        If BtnTic5.Text = "X" Or BtnTic5.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic5.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic5.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic5)
 
         If WinConditions() Then
             IncreaseScore()
@@ -196,16 +151,7 @@
     End Sub
 
     Private Sub BtnTic6_Click(sender As Object, e As EventArgs) Handles BtnTic6.Click
-        currentPlayer = Player.Text
-        If BtnTic6.Text = "X" Or BtnTic6.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic6.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic6.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic6)
 
         If WinConditions() Then
             IncreaseScore()
@@ -213,16 +159,7 @@
     End Sub
 
     Private Sub BtnTic7_Click(sender As Object, e As EventArgs) Handles BtnTic7.Click
-        currentPlayer = Player.Text
-        If BtnTic7.Text = "X" Or BtnTic7.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic7.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic7.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic7)
 
         If WinConditions() Then
             IncreaseScore()
@@ -230,16 +167,7 @@
     End Sub
 
     Private Sub BtnTic8_Click(sender As Object, e As EventArgs) Handles BtnTic8.Click
-        currentPlayer = Player.Text
-        If BtnTic8.Text = "X" Or BtnTic8.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic8.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic8.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic8)
 
         If WinConditions() Then
             IncreaseScore()
@@ -247,16 +175,7 @@
     End Sub
 
     Private Sub BtnTic9_Click(sender As Object, e As EventArgs) Handles BtnTic9.Click
-        currentPlayer = Player.Text
-        If BtnTic9.Text = "X" Or BtnTic9.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            BtnTic9.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            BtnTic9.Text = "O"
-            Player.Text = "X Turn"
-        End If
+        SetButtonText(BtnTic9)
 
         If WinConditions() Then
             IncreaseScore()
@@ -326,4 +245,18 @@
         HomePanel.Visible = True
         About.Visible = False
     End Sub
+
+    Function SetButtonText(ByRef button)
+        currentPlayer = Player.Text
+        If button.Text = "X" Or button.Text = "O" Then
+            MsgBox("Position is taken!")
+        ElseIf currentPlayer = "X Turn" Then
+            button.Text = "X"
+            Player.Text = "O Turn"
+        Else
+            button.Text = "O"
+            Player.Text = "X Turn"
+        End If
+    End Function
+
 End Class
