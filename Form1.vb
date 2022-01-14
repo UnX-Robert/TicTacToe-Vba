@@ -1,32 +1,55 @@
-﻿Public Class Form1
+Public Class Form1
 
     Dim checker As Boolean
     Dim plusOne As Integer
     Dim currentPlayer As String
     Dim win As Boolean
+    Dim Buttons As New Collection
+
+    'Add buttons to collection\
+    Sub CreateCollection()
+        Buttons.Add(BtnTic1)
+        Buttons.Add(BtnTic2)
+        Buttons.Add(BtnTic3)
+        Buttons.Add(BtnTic4)
+        Buttons.Add(BtnTic5)
+        Buttons.Add(BtnTic6)
+        Buttons.Add(BtnTic7)
+        Buttons.Add(BtnTic8)
+        Buttons.Add(BtnTic9)
+    End Sub
 
     Private Sub EnableFalse()
-        BtnTic1.Enabled = False
-        BtnTic2.Enabled = False
-        BtnTic3.Enabled = False
-        BtnTic4.Enabled = False
-        BtnTic5.Enabled = False
-        BtnTic6.Enabled = False
-        BtnTic7.Enabled = False
-        BtnTic8.Enabled = False
-        BtnTic9.Enabled = False
+        For Each button In Buttons
+            button.Enabled = False
+        Next button
     End Sub
 
     Private Sub EnableTrue()
-        BtnTic1.Enabled = True
-        BtnTic2.Enabled = True
-        BtnTic3.Enabled = True
-        BtnTic4.Enabled = True
-        BtnTic5.Enabled = True
-        BtnTic6.Enabled = True
-        BtnTic7.Enabled = True
-        BtnTic8.Enabled = True
-        BtnTic9.Enabled = True
+        For Each button In Buttons
+            button.Enabled = True
+        Next button
+    End Sub
+
+    Private Sub SetButtonText(ByRef button)
+        currentPlayer = Player.Text
+        If button.Text = "X" Or button.Text = "O" Then
+            MsgBox("Position is taken!")
+        ElseIf currentPlayer = "X Turn" Then
+            button.Text = "X"
+            Player.Text = "O Turn"
+        Else
+            button.Text = "O"
+            Player.Text = "X Turn"
+        End If
+    End Sub
+
+    Private Sub EndGame(ByRef btn1, ByRef btn2, ByRef btn3)
+        btn1.BackColor = Color.Green
+        btn2.BackColor = Color.Green
+        btn3.BackColor = Color.Green
+        Player.Text = "Player " & btn3.Text & " won!"
+        MsgBox("Player " & btn3.Text & " won!")
     End Sub
 
     Private Sub IncreaseScore()
@@ -42,70 +65,48 @@
     Private Function WinConditions() As Boolean
         ' Win on lines
         If (BtnTic1.Text = BtnTic2.Text And BtnTic2.Text = BtnTic3.Text And BtnTic3.Text.Length <> 0) Then
-            BtnTic1.BackColor = Color.Green
-            BtnTic2.BackColor = Color.Green
-            BtnTic3.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic1.Text & " won!"
-            MsgBox("Player " & BtnTic1.Text & " won!")
+            EndGame(BtnTic1, BtnTic2, BtnTic3)
             Return True
 
         ElseIf (BtnTic4.Text = BtnTic5.Text And BtnTic5.Text = BtnTic6.Text And BtnTic6.Text.Length <> 0) Then
-            BtnTic4.BackColor = Color.Green
-            BtnTic5.BackColor = Color.Green
-            BtnTic6.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic5.Text & " won!"
-            MsgBox("Player " & BtnTic5.Text & " won!")
+            EndGame(BtnTic4, BtnTic5, BtnTic6)
             Return True
+
         ElseIf (BtnTic7.Text = BtnTic8.Text And BtnTic8.Text = BtnTic9.Text And BtnTic9.Text.Length <> 0) Then
-            BtnTic7.BackColor = Color.Green
-            BtnTic8.BackColor = Color.Green
-            BtnTic9.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic7.Text & " won!"
-            MsgBox("Player " & BtnTic7.Text & " won!")
+            EndGame(BtnTic7, BtnTic8, BtnTic9)
             Return True
+
             ' Win on columns
         ElseIf (BtnTic1.Text = BtnTic4.Text And BtnTic4.Text = BtnTic7.Text And BtnTic7.Text.Length <> 0) Then
-            BtnTic1.BackColor = Color.Green
-            BtnTic4.BackColor = Color.Green
-            BtnTic7.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic1.Text & " won!"
-            MsgBox("Player " & BtnTic1.Text & " won!")
+            EndGame(BtnTic1, BtnTic4, BtnTic7)
             Return True
+
         ElseIf (BtnTic2.Text = BtnTic5.Text And BtnTic5.Text = BtnTic8.Text And BtnTic8.Text.Length <> 0) Then
-            BtnTic2.BackColor = Color.Green
-            BtnTic5.BackColor = Color.Green
-            BtnTic8.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic2.Text & " won!"
-            MsgBox("Player " & BtnTic2.Text & " won!")
+            EndGame(BtnTic2, BtnTic5, BtnTic8)
             Return True
+
         ElseIf (BtnTic3.Text = BtnTic6.Text And BtnTic6.Text = BtnTic9.Text And BtnTic9.Text.Length <> 0) Then
-            BtnTic3.BackColor = Color.Green
-            BtnTic6.BackColor = Color.Green
-            BtnTic9.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic3.Text & " won!"
-            MsgBox("Player " & BtnTic3.Text & " won!")
+            EndGame(BtnTic3, BtnTic6, BtnTic9)
             Return True
+
             ' Win on principal
         ElseIf (BtnTic1.Text = BtnTic5.Text And BtnTic5.Text = BtnTic9.Text And BtnTic9.Text.Length <> 0) Then
-            BtnTic1.BackColor = Color.Green
-            BtnTic5.BackColor = Color.Green
-            BtnTic9.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic1.Text & " won!"
-            MsgBox("Player " & BtnTic1.Text & " won!")
+            EndGame(BtnTic1, BtnTic5, BtnTic9)
+            Return True
+
             ' Win on secondary
         ElseIf (BtnTic3.Text = BtnTic5.Text And BtnTic5.Text = BtnTic7.Text And BtnTic7.Text.Length <> 0) Then
-            BtnTic3.BackColor = Color.Green
-            BtnTic5.BackColor = Color.Green
-            BtnTic7.BackColor = Color.Green
-            Player.Text = "Player " & BtnTic3.Text & " won!"
-            MsgBox("Player " & BtnTic3.Text & " won!")
+            EndGame(BtnTic3, BtnTic5, BtnTic7)
             Return True
+
         ElseIf (BtnTic1.Text.Length <> 0 And BtnTic2.Text.Length <> 0 And BtnTic3.Text.Length <> 0 And BtnTic4.Text.Length <> 0 And
                BtnTic5.Text.Length <> 0 And BtnTic6.Text.Length <> 0 And BtnTic7.Text.Length <> 0 And BtnTic8.Text.Length <> 0 And BtnTic9.Text.Length <> 0) Then
             Player.Text = "Equal!"
             MsgBox("Equal!")
             Return True
         End If
+
+        Return False
     End Function
 
     ' Buttons on Play Panel
@@ -184,26 +185,14 @@
 
     Private Sub GameNew_Click(sender As Object, e As EventArgs) Handles GameNew.Click
         ' Set buttons to start state
-        BtnTic1.Text = ""
-        BtnTic2.Text = ""
-        BtnTic3.Text = ""
-        BtnTic4.Text = ""
-        BtnTic5.Text = ""
-        BtnTic6.Text = ""
-        BtnTic7.Text = ""
-        BtnTic8.Text = ""
-        BtnTic9.Text = ""
+        For Each button In Buttons
+            button.Text = ""
+        Next button
 
         ' Set buttons color to Ivory
-        BtnTic1.BackColor = Color.Ivory
-        BtnTic2.BackColor = Color.Ivory
-        BtnTic3.BackColor = Color.Ivory
-        BtnTic4.BackColor = Color.Ivory
-        BtnTic5.BackColor = Color.Ivory
-        BtnTic6.BackColor = Color.Ivory
-        BtnTic7.BackColor = Color.Ivory
-        BtnTic8.BackColor = Color.Ivory
-        BtnTic9.BackColor = Color.Ivory
+        For Each button In Buttons
+            button.BackColor = Color.Ivory
+        Next button
 
         ' Reset turn
         Player.Text = "X Turn"
@@ -246,17 +235,9 @@
         About.Visible = False
     End Sub
 
-    Function SetButtonText(ByRef button)
-        currentPlayer = Player.Text
-        If button.Text = "X" Or button.Text = "O" Then
-            MsgBox("Position is taken!")
-        ElseIf currentPlayer = "X Turn" Then
-            button.Text = "X"
-            Player.Text = "O Turn"
-        Else
-            button.Text = "O"
-            Player.Text = "X Turn"
-        End If
-    End Function
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CreateCollection()
+    End Sub
+
 
 End Class
